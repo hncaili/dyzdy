@@ -87,8 +87,9 @@
     { "tag": "💁 Instagram", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🏡 家宽节点", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "Ⓜ️ 自建节点", "🐸 手动切换"] },
     { "tag": "📺 Disney", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "Ⓜ️ 自建节点", "🐸 手动切换"] },
     { "tag": "🎵 Spotify", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "Ⓜ️ 自建节点", "🐸 手动切换"] },
+    { "tag": "🐬 Twitter", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🔯 台湾自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "Ⓜ️ 自建节点", "🐸 手动切换"] },
     { "tag": "🍏 Apple", "type": "selector", "outbounds": ["➡️ 直连", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点"] },
-    { "tag": "🐠 兜底策略", "type": "selector", "outbounds": ["🚀 节点选择","➡️ 直连"] },
+    { "tag": "🐠 兜底策略", "type": "selector", "outbounds": ["🚀 节点选择", "Ⓜ️ 自建节点", "➡️ 直连"] },
     { "tag": "🐸 手动切换", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "🇭🇰 香港节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }] },
     { "tag": "🇯🇵 日本节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"] }] },
@@ -130,6 +131,7 @@
      {"rule_set": "geosite-instagram", "outbound": "💁 Instagram"},
      {"rule_set": "geosite-disney", "outbound": "📺 Disney"},
      {"rule_set": "geosite-spotify", "outbound": "🎵 Spotify"},
+     {"rule_set": ["geosite-twitter", "geoip-twitter"], "outbound": "🐬 Twitter"},
      {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
      {"rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择"},
      {"rule_set": ["geoip-cn", "geosite-cn"], "outbound": "➡️ 直连"}
@@ -151,6 +153,7 @@
       { "tag": "geosite-instagram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/instagram.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-disney", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/disney.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-spotify", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs", "download_detour": "➡️ 直连" },
+      { "tag": "geosite-twitter", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/twitter.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "➡️ 直连" },
       { "tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "➡️ 直连" },
@@ -160,6 +163,7 @@
       { "tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "download_detour": "➡️ 直连" },     
       { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "➡️ 直连" },
       { "tag": "geoip-facebook", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/facebook.srs", "download_detour": "➡️ 直连" },
+      { "tag": "geoip-twitter", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/twitter.srs", "download_detour": "➡️ 直连" },
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "➡️ 直连" },
       { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "➡️ 直连" }
     ]
